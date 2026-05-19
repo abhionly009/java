@@ -10,7 +10,7 @@ public class Atomic {
 
 
         AtomicInteger atomicInteger = new AtomicInteger();
-      int data =  atomicInteger.addAndGet(12);
+        int data =  atomicInteger.addAndGet(12);
         System.out.println(data);
 
     }
