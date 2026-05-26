@@ -4,26 +4,33 @@ public class Product {
 
     private String name;
     private String desc;
-    private String category;
+    private Category category;
     private long id;
     private double price;
 
     public Product() {
     }
 
+    public Product(Product product){
+        this.price = product.getPrice();
+        this.id = product.getId();
+        this.name = product.getName();
+        this.desc = product.getDesc();
+        this.category = product.getCategory();
+    }
 
     @Override
     public String toString() {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", desc='" + desc + '\'' +
-                ", category='" + category + '\'' +
+                ", category='" + category .getType()+ '\'' +
                 ", id=" + id +
                 ", price=" + price +
                 '}';
     }
 
-    public Product(String name, String desc, String category, long id, double price) {
+    public Product(String name, String desc, Category category, long id, double price) {
         this.name = name;
         this.desc = desc;
         this.category = category;
@@ -47,11 +54,11 @@ public class Product {
         this.desc = desc;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
