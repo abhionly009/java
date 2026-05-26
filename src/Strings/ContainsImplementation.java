@@ -6,6 +6,9 @@ import java.util.Map;
 public class ContainsImplementation {
 
     public static boolean isAvailable(String original, String toFind){
+        if (original.length()<toFind.length()){
+            return false;
+        }
 
         Map<String,String> map = new HashMap<>();
         int foundLength = toFind.length();
