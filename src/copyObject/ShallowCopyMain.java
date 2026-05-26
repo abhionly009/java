@@ -4,7 +4,7 @@ public class ShallowCopyMain {
 
     public static void main(String[] args) {
 
-        Product p1 = new Product("mobile","samsung 90","Electronics",12,34100);
+        Product p1 = new Product("mobile","samsung 90",new Category("Electronics"),12,34100);
 
         Product p2 = p1;
 
@@ -16,7 +16,8 @@ public class ShallowCopyMain {
 
 
         p2.setName("laptop");
-        p1.setPrice(98000);
+        p2.setPrice(98000);
+        p2.setCategory(new Category("Home Appliance"));
         System.out.println("--------------after update-------------");
         System.out.println(p1);
 
