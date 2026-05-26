@@ -6,6 +6,10 @@ import java.util.Map;
 public class ContainsImplementation {
 
     public static boolean isAvailable(String original, String toFind){
+
+        if (original ==  null || toFind == null){
+            throw new NullPointerException("Input should have some character");
+        }
         if (original.length()<toFind.length()){
             return false;
         }
@@ -24,7 +28,7 @@ public class ContainsImplementation {
 
     public static void main(String[] args) {
         String input = "interview";
-        System.out.println(  isAvailable(input,"view"));
+        System.out.println(  isAvailable(input,"ie"));
 
     }
 
