@@ -9,7 +9,6 @@ public class WithFuture {
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
         System.out.println(" I need a pizza...");
-        CompletableFuture
 
         Future<String> pizzaFuture = executor.submit(()->orderPizza());
         System.out.println("While waiting, I am watching TV...");
