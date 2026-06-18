@@ -5,9 +5,12 @@ import java.util.Map;
 import java.util.Set;
 
 public class LongestSubString {
-    public static void main(String[] args) {
 
-        String input = "abcabcbb";
+    public int findLongestSubString(String input){
+
+        if (input== null){
+            throw new NullPointerException("Input string should not be null");
+        }
 
         int maxLen =0;
         int left = 0;
@@ -25,7 +28,17 @@ public class LongestSubString {
         }
 
         System.out.println(maxLen);
+        return maxLen;
 
+    }
+
+    public static void main(String[] args) {
+
+        String input = "abcabcbb";
+
+       LongestSubString longestSubString = new LongestSubString();
+       int count = longestSubString.findLongestSubString(input);
+        System.out.println(count);
 
     }
 }
