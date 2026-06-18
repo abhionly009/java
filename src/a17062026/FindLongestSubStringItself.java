@@ -5,9 +5,10 @@ import java.util.Map;
 
 public class FindLongestSubStringItself {
 
-    public static void main(String[] args) {
-
-        String input = "pwwkew";
+    public String findSubString(String input){
+        if (input == null){
+            throw new NullPointerException("Input can not be null");
+        }
 
         int left =0;
         int maxLength = 0;
@@ -29,9 +30,17 @@ public class FindLongestSubStringItself {
             }
         }
 
-        System.out.println(input.substring(startIndex, startIndex+maxLength));
 
-        System.out.println(maxLength);
+//        System.out.println(maxLength);
+        return input.substring(startIndex, startIndex+maxLength);
+    }
+
+    public static void main(String[] args) {
+
+        String input = "";
+        FindLongestSubStringItself subStringItself = new FindLongestSubStringItself();
+        String output = subStringItself.findSubString(input);
+        System.out.println(output);
     }
 
 }
