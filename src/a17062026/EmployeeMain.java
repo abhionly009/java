@@ -2,7 +2,7 @@ package a17062026;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class EmployeeMain {
@@ -13,22 +13,30 @@ public class EmployeeMain {
     }
 
 
+    public Optional<Employee> findHighestPayingEmployee(List<Employee> employees){
+        if (employees == null){
+            throw new NullPointerException("Employee list is null");
+        }
+       return employees.stream().max(Comparator.comparing(Employee::getSalary));
+
+    }
+
+
     public static void main(String[] args) {
 
         EmployeeUtils employeeUtils = new EmployeeUtils();
 
-       List<Employee> employees = employeeUtils.getEmployees();
+        List<Employee> employees = employeeUtils.getEmployees();
 
-      EmployeeMain employeeMain = new EmployeeMain();
-     Stream<String> stream = employeeMain.findListOfEmployeesWhoseSalaryIsGreaterThan80000(employees);
+         EmployeeMain employeeMain = new EmployeeMain();
+         Stream<String> stream = employeeMain.findListOfEmployeesWhoseSalaryIsGreaterThan80000(employees);
 
-       stream.forEach(System.out::println);
-//
-//
-//        employees.stream().max(Comparator.comparing(Employee::getSalary))
-//                .map(employee -> employee.getName() +" " + employee.getSalary())
-//                .ifPresent(System.out::println);
-//
+         stream.forEach(System.out::println);
+
+         Optional<Employee> highestPayingEmployee = employeeMain.findHighestPayingEmployee(employees);
+
+         System.out.println(highestPayingEmployee.get());
+
 //
 //        employees.stream().min(Comparator.comparing(Employee::getSalary)).map(employee -> employee.getName() + " : "+ employee.getSalary())
 //                .ifPresent(System.out::println);
