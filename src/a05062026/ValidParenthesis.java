@@ -4,10 +4,14 @@ import java.util.Stack;
 
 public class ValidParenthesis {
 
-    public static boolean isValidParenthesis(String input){
+    public boolean isValidParenthesis(String input){
+
+        if (input== null){
+            throw new NullPointerException("Input can not be null ");
+        }
 
         Stack<Character> stack = new Stack<>();
-        for (int i =0;i<=input.length();i++){
+        for (int i =0;i<input.length();i++){
             char ch = input.charAt(i);
             if (ch == '(' || ch == '{' || ch == '['){
                 stack.push(ch);
@@ -31,7 +35,8 @@ public class ValidParenthesis {
     public static void main(String[] args) {
 
         String input = "(()))";
-        System.out.println(        isValidParenthesis(input));
+        ValidParenthesis validParenthesis = new ValidParenthesis();
+        System.out.println(validParenthesis.isValidParenthesis(input));
 
     }
 }
