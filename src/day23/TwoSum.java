@@ -3,6 +3,11 @@ package day23;
 public class TwoSum {
 
     public int[] findIndexOfTwoNumbers(int [] arr, int target){
+
+        if (arr == null){
+            throw new NullPointerException("Input can not be null");
+        }
+
         int left =0;
         int right = arr.length-1;
 
