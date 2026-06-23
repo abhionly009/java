@@ -13,6 +13,10 @@ public class ProductOfArrayExceptSelf {
     }
 
     public int [] findProduct( int [] input){
+        if (input == null){
+            throw new NullPointerException("Input can not be null");
+        }
+
         int [] result = new int[input.length];
 
         for (int i = 0;i<input.length;i++){
