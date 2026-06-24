@@ -4,7 +4,11 @@ import java.util.*;
 
 public class GroupOfAnagram {
 
-    public  static List<List<String>> findListAnagram(String [] input){
+    public  List<List<String>> findListAnagram(String [] input){
+
+        if (input == null){
+            throw new NullPointerException("Input can not be null");
+        }
 
         Map<String,List<String>> map = new HashMap<>();
 
@@ -25,9 +29,10 @@ public class GroupOfAnagram {
 
     public static void main(String[] args) {
 
+        GroupOfAnagram groupOfAnagram = new GroupOfAnagram();
         String [] input = {"eat","tea","tan","ate","nat","bat"};
 
-       List<List<String>> list =  findListAnagram(input);
+       List<List<String>> list =  groupOfAnagram.findListAnagram(input);
 
        list.stream().forEach(System.out::println);
 
