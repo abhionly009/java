@@ -1,18 +1,13 @@
-package day23;
+package a05062026;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FirstNonRepeatingCharacter {
 
     public char findCharacter(String input){
-
         char result = ' ';
-
-        if (input == null){
-            throw new NullPointerException("Input should not be empty");
-        }
-
         Map<Character,Integer> map = new LinkedHashMap<>();
 
         for (int i=0;i<input.length();i++){
@@ -31,16 +26,16 @@ public class FirstNonRepeatingCharacter {
             }
         }
         return result;
+
     }
 
     public static void main(String[] args) {
 
-        String input = "swisii";
-
         FirstNonRepeatingCharacter firstNonRepeatingCharacter = new FirstNonRepeatingCharacter();
 
-       char output = firstNonRepeatingCharacter.findCharacter(input);
-        System.out.println(output);
+        char result =  firstNonRepeatingCharacter.findCharacter("swisii");
+
+        System.out.println(result);
 
     }
 }
