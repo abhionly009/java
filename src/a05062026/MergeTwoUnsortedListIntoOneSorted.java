@@ -12,7 +12,7 @@ public class MergeTwoUnsortedListIntoOneSorted {
         List<Integer> list2 = Arrays.asList(3,10,15,7);
 
 
-        List<Integer> result = Stream.concat(list2.stream(),list2.stream()).sorted().toList();
+        List<Integer> result = Stream.concat(list.stream(),list2.stream()).sorted().toList();
 
         System.out.println(result);
 
